@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
-#from tkinter import *
-#from tkinter import messagebox
 import time
 import easygui as egui
 
@@ -25,8 +23,11 @@ def open_portal():
 
 def login_to_portal(driver,username,password):
     username_ele = driver.find_element(By.ID, "txtUserName")
+    print(f"Username found")
     password_ele = driver.find_element(By.ID, "txtPassword")
+    print(f"Password found")
     captcha_ele = driver.find_element(By.ID, "txtChallanCaptcha")
+    print(f"Captcha found")
     login_button_ele = driver.find_element(By.ID, "btnLogin")
 
     creds_inserted = insert_username_password(username,username_ele,password,password_ele)
