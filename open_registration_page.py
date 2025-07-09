@@ -5,6 +5,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import easygui as egui
+from logger_conf import create_log_file
+
+logger = create_log_file()
 
 def open_registration_page(driver):
     status = ""
@@ -36,5 +39,7 @@ def check_for_registration_page(driver,listOfOpenWindows):
         except Exception as e:
             status = False
             print(f"Registration Link Element not found with exception {e}")
-        return status
+        if status == True:
+            break
+    return status
         

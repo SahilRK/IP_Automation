@@ -3,3 +3,5 @@ venv
 data
 chrome
 chromedriver
+docs
+logs
